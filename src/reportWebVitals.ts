@@ -1,7 +1,10 @@
-import { ReportHandler } from 'web-vitals';
+import { type ReportHandler } from 'web-vitals';
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const reportWebVitals = (onPerfEntry?: ReportHandler) => {
+  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
   if (onPerfEntry && onPerfEntry instanceof Function) {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
       getCLS(onPerfEntry);
       getFID(onPerfEntry);

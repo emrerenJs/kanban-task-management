@@ -22,5 +22,10 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
