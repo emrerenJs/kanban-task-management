@@ -1,5 +1,7 @@
+import Test from './components/test';
+
 const App = () => {
-  return <div>emre</div>;
+  return <Test />;
 };
 
 export default App;

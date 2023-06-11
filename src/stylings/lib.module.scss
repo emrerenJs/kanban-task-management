@@ -1,0 +1,30 @@
+@use './themes/kanban-theme.module.scss' as kanban-theme-lib;
+
+$themes: (
+    kanban-theme: kanban-theme-lib.$palette
+);
+
+@mixin themify {
+    @each $theme, $light-modes in $themes {
+        @each $light-mode, $palette in $light-modes {
+            :global .#{$theme}.#{$light-mode} {
+                $theme-map: () !global;
+                
+                @each $scheme, $variants in $palette {
+                    $value: map-get(map-get(map-get($themes, $theme), $light-mode), $scheme);
+                    $theme-map: map-merge($theme-map, ($scheme: $value)) !global;
+                }
+                
+                :local {
+                    @content;
+                }
+
+                $theme-map: null !global;
+            }
+        }
+    }
+}
+
+@function get-color($scheme, $variant) {
+    @return map-get(map-get($theme-map, $scheme), $variant);
+}
