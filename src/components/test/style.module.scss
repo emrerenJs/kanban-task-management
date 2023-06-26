@@ -1,9 +1,0 @@
-@use '../../stylings/lib.module.scss' as *;
-
-@include themify() {
-    .test {
-        width: 50px;
-        height: 50px;
-        background-color: get-color('primary', 'background');
-    }
-}

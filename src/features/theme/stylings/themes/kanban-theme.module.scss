@@ -33,6 +33,11 @@ $palette: (
             hover: $error-hover,
             foreground-text: $white,
             text: $error
+        ),
+        general: (
+            text: $black,
+            ghost-text: $medium-grey,
+            background: $white,
         )
     ),
     dark: (
@@ -53,6 +58,11 @@ $palette: (
             hover: $error-hover,
             foreground-text: $white,
             text: $error
+        ),
+        general: (
+            text: $white,
+            ghost-text: $medium-grey,
+            background: $black,
         )
     )
 );
