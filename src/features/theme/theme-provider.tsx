@@ -9,13 +9,14 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const { theme, lightMode } = useAppSelector((state) => state.themeStore);
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    const systemLightModeListener = (event: MediaQueryListEvent) => {
-      const newLightMode = event.matches ? LightModes.DARK : LightModes.LIGHT;
-      dispatch(setLightMode(newLightMode));
-    };
+  const systemLightModeListener = (event: MediaQueryListEvent) => {
+    const newLightMode = event.matches ? LightModes.DARK : LightModes.LIGHT;
+    dispatch(setLightMode(newLightMode));
+  };
 
-    if (typeof window.matchMedia === 'function') {
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    if (window?.matchMedia('(prefers-color-scheme: dark)')) {
       dispatch(
         setLightMode(
           window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -30,13 +31,14 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     }
 
     return () => {
-      if (typeof window.matchMedia === 'function') {
+      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+      if (window?.matchMedia('(prefers-color-scheme: dark)')) {
         window
           .matchMedia('(prefers-color-scheme: dark')
           .removeEventListener('change', systemLightModeListener);
       }
     };
-  }, [window.matchMedia]);
+  }, [window?.matchMedia]);
 
   return (
     <div data-testid="theme-provider" className={clsx('theme-provider', theme, lightMode)}>
