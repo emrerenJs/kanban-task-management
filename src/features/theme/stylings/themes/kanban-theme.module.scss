@@ -1,0 +1,68 @@
+$primary: #635FC7;
+$primary-hover: #A8A4FF;
+$secondary: #625fc71A;
+$secondary-hover: #625fc740;
+$error: #ea5555;
+$error-hover: #ff9898;
+$black: #000112;
+$very-dark-grey: #20212C;
+$dark-grey: #2B2C37;
+$lines-dark: #3e3f4e;
+$medium-grey: #828fa3;
+$lines: #e4ebfa;
+$light-grey: #f4f7fd;
+$lines-light: #ffffff;
+$white: #ffffff;
+
+$palette: (
+    light: (
+        primary: (
+            background: $primary,
+            hover: $primary-hover,
+            foreground-text: $white,
+            text: $black,
+        ),
+        secondary: (
+            background: $secondary,
+            hover: $secondary-hover,
+            foreground-text: $primary,
+            text: $black,
+        ),
+        error: (
+            background: $error,
+            hover: $error-hover,
+            foreground-text: $white,
+            text: $error
+        ),
+        general: (
+            text: $black,
+            ghost-text: $medium-grey,
+            background: $white,
+        )
+    ),
+    dark: (
+        primary: (
+            background: $primary,
+            hover: $primary-hover,
+            foreground-text: $white,
+            text: $black,
+        ),
+        secondary: (
+            background: $white,
+            hover: $white,
+            foreground-text: $secondary,
+            text: $white,
+        ),
+        error: (
+            background: $error,
+            hover: $error-hover,
+            foreground-text: $white,
+            text: $error
+        ),
+        general: (
+            text: $white,
+            ghost-text: $medium-grey,
+            background: $black,
+        )
+    )
+);

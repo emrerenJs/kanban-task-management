@@ -1,0 +1,18 @@
+@use './stylings/lib.module.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.theme-provider.light, .design-root.dark {
+    width: 100%;
+    height: 100vh;
+}
+
+@include themify-unmodule() {
+    &.theme-provider {
+        background-color: get-color('general', 'background');
+        color: get-color('general', 'text');
+    }
+}
